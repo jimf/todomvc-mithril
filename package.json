@@ -1,0 +1,26 @@
+{
+  "name": "todomvc-mithril",
+  "version": "0.0.0",
+  "description": "TodoMVC example written in Mithril",
+  "author": "Jim Fitzpatrick",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "debowerify"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^6.3.2",
+    "debowerify": "^0.9.1",
+    "jshint": "^2.5.10",
+    "uglify-js": "^2.4.15",
+    "uglifycss": "0.0.10",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist/{css,js} && browserify js/app.js -o dist/js/app.js && uglifycss bower_components/todomvc-common/base.css > dist/css/app.css && cp bower_components/todomvc-common/bg.png dist/css",
+    "dev": "watchify js/app.js -o dist/js/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
